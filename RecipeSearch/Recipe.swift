@@ -3,7 +3,7 @@
 //  RecipeSearch
 //
 //  Created by Diel Barnes on 18/05/2017.
-//  Copyright © 2017 Hacarus. All rights reserved.
+//  Copyright © 2017 Diel Barnes. All rights reserved.
 //
 
 struct Recipe {

@@ -3,12 +3,12 @@
 //  RecipeSearch
 //
 //  Created by Diel Barnes on 18/05/2017.
-//  Copyright © 2017 Hacarus. All rights reserved.
+//  Copyright © 2017 Diel Barnes. All rights reserved.
 //
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate {
 
     var searchResults: [Recipe] = []
     var hasMoreResults: Bool = false
@@ -195,5 +195,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if let searchText = searchBar.text, hasMoreResults, indexPath.row == searchResults.count - 1 {
             searchRecipe(searchText, newSearch: false)
         }
+    }
+    
+    // MARK: - Scroll View Methods
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
     }
 }
