@@ -128,6 +128,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchText.isEmpty {
+            noResultsLabel.isHidden = true
+            activityIndicator.stopAnimating()
             searchResults.removeAll()
             recipeTableView.reloadData()
         }
